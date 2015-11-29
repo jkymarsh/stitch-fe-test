@@ -46,7 +46,7 @@
     <script src="/assets/javascripts/main.js"></script>
 
     <script>
-      $.get('shopify/get?path=/admin/products.json').done(function(data){
+      $.get('/api/v1/products?channel=shopify&url=/admin/products.json?fields=body_html,created_at,id,title,variants').done(function(data){
         console.log(data);
       });
     </script>
