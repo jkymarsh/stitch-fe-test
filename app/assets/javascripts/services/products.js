@@ -6,10 +6,16 @@ window.jkymarshStitchFETest.service('ProductsService', ['$http', function ($http
       console.log(Promise);
       console.log('hello');
     },
-    getAll: function() {
+    getAllProducts: function() {
       return $http({
         method: 'GET',
         url: '/api/v1/products?channel=shopify&url=/admin/products.json?fields=body_html,created_at,id,title,variants'
+      });
+    },
+    getAllVariants: function(productId) {
+      return $http({
+        method: 'GET',
+        url: '/api/v1/products/3923236550?channel=shopify&url=/admin/products/3923236550.json'
       });
     }
   }

@@ -46,6 +46,35 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/:product_id', function(req, res) {
+  var url;
+
+  res.set({'Content-Type': 'application/json'});
+
+  if (req.query.channel === "shopify") {
+    url = 'https://' + API_KEY + ':' + PASSWD + '@' + STORE_NAME + '.myshopify.com' + req.query.url;
+  } else {
+    // TODO: better handling of non-shopify channels
+    url = 'NONSENSE';
+  }
+
+  request(url, function (error, response, body) {
+    var variantsJSON;
+    var variantsArr;
+
+    if (!error && response.statusCode == 200) {
+      variantsJSON = JSON.parse(body).product.variants;
+      variantsArr = variantsJSON ? variantsJSON : [];
+
+      res.status(200).send(variantsArr);
+    } else {
+      console.log(error);
+      console.log(response.statusCode);
+      res.status(response.statusCode).send(body);
+    }
+  });
+});
+
 router.post('/post', function(req, res){
 
   var path = req.query.path

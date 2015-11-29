@@ -12,10 +12,10 @@ window.jkymarshStitchFETest.controller('ProductDetailsCtrl', ['ProductsService',
     CNY: 6.09
   };
 
-  // ProductsService.getAll().then(function(response) {
-  //   console.log(response.data);
-  //   that.products = response.data;
-  // });
+  ProductsService.getAllVariants().then(function(response) {
+    console.log(response.data);
+    that.variants = response.data;
+  });
 
   this.total = function total(outCurr) {
     return this.convertCurrency(this.qty * this.cost, this.inCurr, outCurr);

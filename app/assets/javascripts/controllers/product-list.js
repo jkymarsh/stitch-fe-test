@@ -12,7 +12,7 @@ window.jkymarshStitchFETest.controller('ProductListCtrl', ['ProductsService', fu
     CNY: 6.09
   };
 
-  ProductsService.getAll().then(function(response) {
+  ProductsService.getAllProducts().then(function(response) {
     console.log(response.data);
     that.products = response.data;
   });
