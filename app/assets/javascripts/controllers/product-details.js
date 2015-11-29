@@ -1,6 +1,6 @@
 // https://docs.angularjs.org/guide/concepts#controller
 window.jkymarshStitchFETest.controller('ProductDetailsCtrl', ['ProductsService', function(ProductsService) {
-  that = this;
+  var that = this;
 
   this.qty = 1;
   this.cost = 2;

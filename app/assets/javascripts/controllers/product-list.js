@@ -1,8 +1,8 @@
 // https://docs.angularjs.org/guide/concepts#controller
 window.jkymarshStitchFETest.controller('ProductListCtrl', ['ProductsService', function(ProductsService) {
-  that = this;
+  var that = this;
 
-  this.qty = 1;
+  this.qty = 5;
   this.cost = 2;
   this.inCurr = 'EUR';
   this.currencies = ['USD', 'EUR', 'CNY'];
