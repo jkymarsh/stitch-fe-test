@@ -28,6 +28,7 @@ app.use(cookieParser());
 app.use('/vendor/assets/javascripts', express.static(path.join(__dirname, 'node_modules')));
 app.use('/vendor/assets/javascripts', express.static(path.join(__dirname, 'app', 'assets', 'javascripts', 'vendor')));
 app.use('/assets', express.static(path.join(__dirname, 'app', 'assets')));
+app.use('/views', express.static(path.join(__dirname, 'app', 'views')));
 
 app.use(express.static(path.join(__dirname, 'app')));
 
