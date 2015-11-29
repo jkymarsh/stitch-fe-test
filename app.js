@@ -24,8 +24,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// use rails naming conventions to alias first- and third-party assets
 app.use('/vendor/assets/javascripts', express.static(path.join(__dirname, 'node_modules')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/vendor/assets/javascripts', express.static(path.join(__dirname, 'app', 'assets', 'javascripts', 'vendor')));
+app.use('/assets', express.static(path.join(__dirname, 'app', 'assets')));
+
+app.use(express.static(path.join(__dirname, 'app')));
 
 app.use('/', routes);
 app.use('/shopify', shopify);
