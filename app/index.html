@@ -9,7 +9,7 @@
         <meta name="description" content="A sample project for Stitch Labs Front-End Dev position.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="/assets/normalize.css">
+        <link rel="stylesheet" href="/assets/reset.css">
         <link rel="stylesheet" href="/assets/main.css">
 
         <script src="/vendor/assets/javascripts/modernizr-2.8.3.min.js"></script>
@@ -33,11 +33,7 @@
 
         <script>
           $.get('shopify/get?path=/admin/products.json').done(function(data){
-            console.debug(data);
-
-            data.products.forEach(function(element, index){
-              $('body').append(element.title + ", ");
-            });
+            console.log(data);
           });
         </script>
     </body>
