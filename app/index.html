@@ -1,28 +1,44 @@
-<html ng-app="jkymarshStitchFETest">
-	<head>
-	<script src="/vendor/assets/javascripts/angular/angular.js"></script>
-	<script src="/vendor/assets/javascripts/angular-ui-router/release/angular-ui-router.js"></script>
-	<script src="/assets/javascripts/main.js"></script>
-	</head>
-	<body>
-		<h1>Hello World</h1>
+<!doctype html>
+<html class="no-js" lang="en" ng-app="jkymarshStitchFETest">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<div ui-view></div>
-		    <!-- We'll also add some navigation: -->
-		    <a ui-sref="state1">State 1</a>
-		    <a ui-sref="state2">State 2</a>
+        <title>J. Ky Marsh - Stitch Labs FE Test</title>
 
-		<script src="/vendor/assets/javascripts/jquery-1.11.3.js"></script>
-		<script src="/vendor/assets/javascripts/moment.js"></script>
+        <meta name="description" content="A sample project for Stitch Labs Front-End Dev position.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<script>
-			$.get('shopify/get?path=/admin/products.json').done(function(data){
-				console.debug(data);
+        <link rel="stylesheet" href="/assets/normalize.css">
+        <link rel="stylesheet" href="/assets/main.css">
 
-				data.products.forEach(function(element, index){
-					$('body').append(element.title + ", ");
-				});
-			});
-		</script>
-	</body>
+        <script src="/vendor/assets/javascripts/modernizr-2.8.3.min.js"></script>
+
+        <script src="/vendor/assets/javascripts/angular/angular.js"></script>
+        <script src="/vendor/assets/javascripts/angular-ui-router/release/angular-ui-router.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div ui-view></div>
+        <!-- We'll also add some navigation: -->
+        <a ui-sref="state1">State 1</a>
+        <a ui-sref="state2">State 2</a>
+
+        <script src="/vendor/assets/javascripts/jquery-1.11.3.js"></script>
+        <script src="/vendor/assets/javascripts/moment.js"></script>
+        <script src="/assets/javascripts/main.js"></script>
+
+        <script>
+          $.get('shopify/get?path=/admin/products.json').done(function(data){
+            console.debug(data);
+
+            data.products.forEach(function(element, index){
+              $('body').append(element.title + ", ");
+            });
+          });
+        </script>
+    </body>
 </html>

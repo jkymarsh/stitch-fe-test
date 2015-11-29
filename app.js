@@ -27,7 +27,9 @@ app.use(cookieParser());
 // use rails naming conventions to alias first- and third-party assets
 app.use('/vendor/assets/javascripts', express.static(path.join(__dirname, 'node_modules')));
 app.use('/vendor/assets/javascripts', express.static(path.join(__dirname, 'app', 'assets', 'javascripts', 'vendor')));
-app.use('/assets', express.static(path.join(__dirname, 'app', 'assets')));
+app.use('/assets', express.static(path.join(__dirname, 'app', 'assets', 'images')));
+app.use('/assets', express.static(path.join(__dirname, 'app', 'assets', 'javascripts')));
+app.use('/assets', express.static(path.join(__dirname, 'app', 'assets', 'stylesheets')));
 app.use('/views', express.static(path.join(__dirname, 'app', 'views')));
 
 app.use(express.static(path.join(__dirname, 'app')));
