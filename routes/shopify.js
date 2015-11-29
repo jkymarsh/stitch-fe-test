@@ -2,9 +2,10 @@ var express = require('express');
 var request = require('request');
 var router = express.Router();
 
-var API_KEY = 'fe47169d605a535fd4ccd2f850794a4f';
-var PASSWD = '9d5283f93b55448ca33680f28bfc2210';
-var STORE_NAME = 'levisproxytest';
+// NOTE: should be provided by env variables, this is incredibly insecure!
+var API_KEY = '96d4498319c771f0764e73b2bf6e011e';
+var PASSWD = 'e7f797fa4268868a7639383a2bad9493';
+var STORE_NAME = 'stitchlabs-jkymarsh';
 
 router.get('/get', function(req, res) {
 
