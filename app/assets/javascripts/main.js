@@ -9,7 +9,9 @@ window.jkymarshStitchFETest.config(function($stateProvider, $urlRouterProvider) 
     .state('home', {
       url: "/home",
       views: {
-              "product-list": { templateUrl: "/views/product-list.html" },
+              "product-list": {
+                templateUrl: "/views/product-list.html",
+                controller: "ProductListCtrl as productList" },
               "product-detail-view": { templateUrl: "/views/product-detail-view.html" }
             }
     })

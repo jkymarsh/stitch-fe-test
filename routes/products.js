@@ -29,7 +29,7 @@ router.get('/', function(req, res) {
 
       productsJSON.forEach(function(ele, idx) {
         productsArr.push({
-          desc: ele.body_html,
+          description: ele.body_html,
           created_at: ele.created_at,
           id: ele.id,
           title: ele.title,
