@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="/assets/reset.css">
     <link rel="stylesheet" href="/assets/main.css">
 
+    <style>
+      * {
+        border: 1px solid red !important;
+      }
+    </style>
+
     <script src="/vendor/assets/javascripts/modernizr-2.8.3.min.js"></script>
 
     <script src="/vendor/assets/javascripts/angular/angular.js"></script>
@@ -22,7 +28,14 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ui-view></div>
+    <div style="margin-bottom: 20px;">
+      NAVBAR
+    </div>
+
+    <div class="container cf">
+      <div ui-view="product-list" class="fl-l w-1-4"></div>
+      <div ui-view="product-detail-view" class="fl-l w-3-4"></div>
+    </div>
 
     <!-- We'll also add some navigation: -->
     <a ui-sref="state1">State 1</a>

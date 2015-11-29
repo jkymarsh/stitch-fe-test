@@ -2,10 +2,18 @@ window.jkymarshStitchFETest = angular.module('jkymarshStitchFETest', ['ui.router
 
 window.jkymarshStitchFETest.config(function($stateProvider, $urlRouterProvider) {
   // For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise("/state1");
+  $urlRouterProvider.otherwise("/home");
   //
   // Now set up the states
   $stateProvider
+    .state('home', {
+      url: "/home",
+      views: {
+              "product-list": { templateUrl: "/views/product-list.html" },
+              "product-detail-view": { templateUrl: "/views/product-detail-view.html" }
+            }
+    })
+
     .state('state1', {
       url: "/state1",
       templateUrl: "/views/state1.html"
