@@ -1,8 +1,20 @@
-<html>
+<html ng-app="myApp">
 	<head>
+	<script src="/vendor/assets/javascripts/angular/angular.js"></script>
+	<script src="/vendor/assets/javascripts/angular-ui-router/release/angular-ui-router.js"></script>
+	<script>
+        var myApp = angular.module('myApp', ['ui.router']);
+        // For Component users, it should look like this:
+        // var myApp = angular.module('myApp', [require('angular-ui-router')]);
+    </script>
 	</head>
 	<body>
 		<h1>Hello World</h1>
+
+		<div ui-view></div>
+		    <!-- We'll also add some navigation: -->
+		    <a ui-sref="state1">State 1</a>
+		    <a ui-sref="state2">State 2</a>
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="javascripts/lib/moment/moment.2.10.6/moment.js"></script>
