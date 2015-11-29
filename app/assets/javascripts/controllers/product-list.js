@@ -1,5 +1,7 @@
 // https://docs.angularjs.org/guide/concepts#controller
 window.jkymarshStitchFETest.controller('ProductListCtrl', ['ProductsService', function(ProductsService) {
+  that = this;
+
   this.qty = 1;
   this.cost = 2;
   this.inCurr = 'EUR';
@@ -12,6 +14,7 @@ window.jkymarshStitchFETest.controller('ProductListCtrl', ['ProductsService', fu
 
   ProductsService.getAll().then(function(response) {
     console.log(response.data);
+    that.products = response.data;
   });
 
   this.total = function total(outCurr) {
