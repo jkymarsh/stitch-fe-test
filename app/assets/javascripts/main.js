@@ -9,20 +9,21 @@ window.jkymarshStitchFETest.config(function($stateProvider, $urlRouterProvider) 
       abstract: true,
       views: {
         layout: {
-          templateUrl: '/views/layout.html',
+          templateUrl: '/views/layouts/master.html',
         }
       }
     })
     .state('home', {
-        url: '/home',
-        templateUrl: '/views/empty-detail-view.html',
-        parent: 'master',
-      })
+      url: '/home',
+      templateUrl: '/views/empty-detail-view.html',
+      parent: 'master',
+    })
     .state('product', {
-                url: "/products/:productId",
-                templateUrl: "/views/product-detail-view.html",
-                parent: 'master'
-            });
+      url: "/products/:productId",
+      templateUrl: "/views/product-detail-view.html",
+      controller: "ProductDetailsCtrl as productDetails",
+      parent: 'master'
+    });
 
   //
   // Now set up the states
