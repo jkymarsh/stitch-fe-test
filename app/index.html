@@ -47,11 +47,5 @@
     <script src="/assets/javascripts/main.js"></script>
     <script src="/assets/javascripts/controllers/product-list.js"></script>
     <script src="/assets/javascripts/services/products.js"></script>
-
-    <script>
-      $.get('/api/v1/products?channel=shopify&url=/admin/products.json?fields=body_html,created_at,id,title,variants').done(function(data){
-        console.log(data);
-      });
-    </script>
   </body>
 </html>

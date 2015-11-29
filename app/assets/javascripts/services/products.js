@@ -1,9 +1,16 @@
-window.jkymarshStitchFETest.service('ProductsService', function () {
+// http://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html
+window.jkymarshStitchFETest.service('ProductsService', ['$http', function ($http) {
 
-  // we could do additional work here too
   return {
     sayHello: function () {
+      console.log(Promise);
       console.log('hello');
+    },
+    getAll: function() {
+      return $http({
+        method: 'GET',
+        url: '/api/v1/products?channel=shopify&url=/admin/products.json?fields=body_html,created_at,id,title,variants'
+      });
     }
   }
-});
+}]);
