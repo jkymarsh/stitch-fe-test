@@ -2,6 +2,56 @@ Product info
 
 <ul>
   <li ng-repeat="v in productDetails.variants">
-      {{v}}
+    <form ng-submit="productDetails.updateVariant(v.id)">
+      <label>
+        <span>Title</span>
+
+        <input type="text" ng-model="v.title" placeholder="Orange / S / Stark">
+      </label>
+
+      <label>
+        <span>SKU</span>
+
+        <input type="text" ng-model="v.sku" placeholder="Orange / S / Stark">
+      </label>
+
+      <label>
+        <span>Quantity</span>
+
+        <input type="text" ng-model="v.inventory_quantity" placeholder="Orange / S / Stark">
+      </label>
+
+      <label>
+        <span>Color</span>
+
+        <input type="text" ng-model="v.option1" placeholder="Orange / S / Stark">
+      </label>
+
+      <label>
+        <span>Size</span>
+
+        <input type="text" ng-model="v.option2" placeholder="Orange / S / Stark">
+      </label>
+
+      <label>
+        <span>Style</span>
+
+        <input type="text" ng-model="v.option3" placeholder="Orange / S / Stark">
+      </label>
+
+      <label>
+        <span>Created at</span>
+
+        <input type="text" ng-model="v.created_at" placeholder="Orange / S / Stark">
+      </label>
+
+      <label>
+        <span>Price</span>
+
+        <input type="text" ng-model="v.price" placeholder="Orange / S / Stark">
+      </label>
+
+      <button type="submit">Update</button>
+    </form>
   </li>
-</ul>
+</div>

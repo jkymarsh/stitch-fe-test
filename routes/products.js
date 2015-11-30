@@ -63,7 +63,7 @@ router.get('/:product_id', function(req, res) {
     var variantsArr;
 
     if (!error && response.statusCode == 200) {
-      variantsJSON = JSON.parse(body).product.variants;
+      variantsJSON = JSON.parse(body).variants;
       variantsArr = variantsJSON ? variantsJSON : [];
 
       res.status(200).send(variantsArr);

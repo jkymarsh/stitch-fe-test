@@ -17,6 +17,10 @@ window.jkymarshStitchFETest.controller('ProductDetailsCtrl', ['ProductsService',
     that.variants = response.data;
   });
 
+  this.updateVariant = function(variantId) {
+    console.log('update variant: ', variantId);
+  };
+
   this.total = function total(outCurr) {
     return this.convertCurrency(this.qty * this.cost, this.inCurr, outCurr);
   };
