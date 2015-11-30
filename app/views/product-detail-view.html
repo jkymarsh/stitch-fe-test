@@ -1,57 +1,83 @@
 <h3>Variants of Product #{{productDetails.productId}}</h3>
 
-<ul>
+<hr>
+
+<ul style="list-style: none;">
   <li ng-repeat="v in productDetails.variants">
     <form ng-submit="productDetails.updateVariant(v)">
-      <label>
-        <span>Title</span>
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="form-group">
+            <label for="variant-title-{{v.id}}">Title</label>
 
-        <input type="text" ng-model="v.title" placeholder="Orange / S / Stark">
-      </label>
+            <input type="text" id="variant-title-{{v.id}}" ng-model="v.title" class="form-control" placeholder="Orange / S / Stark">
+          </div>
+        </div>
 
-      <label>
-        <span>SKU</span>
+        <div class="col-sm-4 col-md-3">
+          <div class="form-group">
+            <label for="variant-sku-{{v.id}}">SKU</label>
 
-        <input type="text" ng-model="v.sku" placeholder="Orange / S / Stark">
-      </label>
+            <input type="text" id="variant-sku-{{v.id}}" ng-model="v.sku" class="form-control" placeholder="Orange / S / Stark">
+          </div>
+        </div>
 
-      <label>
-        <span>Quantity</span>
+        <div class="col-sm-4 col-md-3">
+          <div class="form-group">
+            <label for="variant-inventory_quantity-{{v.id}}">Quantity</label>
 
-        <input type="text" ng-model="v.inventory_quantity" placeholder="Orange / S / Stark">
-      </label>
+            <input type="text" id="variant-inventory_quantity-{{v.id}}" ng-model="v.inventory_quantity" class="form-control" placeholder="Orange / S / Stark">
+          </div>
+        </div>
 
-      <label>
-        <span>Color</span>
+        <div class="col-sm-4 col-md-3">
+          <div class="form-group">
+            <label for="variant-option1-{{v.id}}">Color</label>
 
-        <input type="text" ng-model="v.option1" placeholder="Orange / S / Stark">
-      </label>
+            <input type="text" id="variant-option1-{{v.id}}" ng-model="v.option1" class="form-control" placeholder="Orange / S / Stark">
+          </div>
+        </div>
 
-      <label>
-        <span>Size</span>
+        <div class="col-sm-4 col-md-3">
+          <div class="form-group">
+            <label for="variant-option2-{{v.id}}">Size</label>
 
-        <input type="text" ng-model="v.option2" placeholder="Orange / S / Stark">
-      </label>
+            <input type="text" id="variant-option2-{{v.id}}" ng-model="v.option2" class="form-control" placeholder="Orange / S / Stark">
+          </div>
+        </div>
 
-      <label>
-        <span>Style</span>
+        <div class="col-sm-4 col-md-3">
+          <div class="form-group">
+            <label for="variant-option3-{{v.id}}">Style</label>
 
-        <input type="text" ng-model="v.option3" placeholder="Orange / S / Stark">
-      </label>
+            <input type="text" id="variant-option3-{{v.id}}" ng-model="v.option3" class="form-control" placeholder="Orange / S / Stark">
+          </div>
+        </div>
 
-      <label>
-        <span>Created at</span>
+        <div class="col-sm-4 col-md-3">
+          <div class="form-group">
+            <label for="variant-created_at-{{v.id}}">Created at</label>
 
-        <input type="text" ng-model="v.created_at" placeholder="Orange / S / Stark">
-      </label>
+            <input type="text" id="variant-created_at-{{v.id}}" ng-model="v.created_at" class="form-control" placeholder="Orange / S / Stark">
+          </div>
+        </div>
 
-      <label>
-        <span>Price</span>
+        <div class="col-sm-4 col-md-3">
+          <div class="form-group">
+            <label for="variant-price-{{v.id}}">Price</label>
 
-        <input type="text" ng-model="v.price" placeholder="Orange / S / Stark">
-      </label>
+            <input type="text" id="variant-price-{{v.id}}" ng-model="v.price" class="form-control" placeholder="Orange / S / Stark">
+          </div>
+        </div>
 
-      <button type="submit">Update</button>
+        <div class="col-sm-4 col-md-12">
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Update Variant</button>
+          </div>
+        </div>
+      </div>
     </form>
+
+    <hr>
   </li>
 </ul>
