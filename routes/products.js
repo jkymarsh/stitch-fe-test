@@ -1,23 +1,12 @@
 var express = require('express');
 var request = require('request');
 var router = express.Router();
-
-// TODO: should be provided by env variables, this is incredibly insecure!
-var API_KEY = '96d4498319c771f0764e73b2bf6e011e';
-var PASSWD = 'e7f797fa4268868a7639383a2bad9493';
-var STORE_NAME = 'stitchlabs-jkymarsh';
+var channelHelper = require('./helpers/channel');
 
 router.get('/', function(req, res) {
-  var url;
+  var url = channelHelper(req.query.channel, req.query.url);
 
   res.set({'Content-Type': 'application/json'});
-
-  if (req.query.channel === "shopify") {
-    url = 'https://' + API_KEY + ':' + PASSWD + '@' + STORE_NAME + '.myshopify.com' + req.query.url;
-  } else {
-    // TODO: better handling of non-shopify channels
-    url = 'NONSENSE';
-  }
 
   request(url, function (error, response, body) {
     var productsJSON;
@@ -47,16 +36,9 @@ router.get('/', function(req, res) {
 });
 
 router.get('/:product_id', function(req, res) {
-  var url;
+  var url = channelHelper(req.query.channel, req.query.url);
 
   res.set({'Content-Type': 'application/json'});
-
-  if (req.query.channel === "shopify") {
-    url = 'https://' + API_KEY + ':' + PASSWD + '@' + STORE_NAME + '.myshopify.com' + req.query.url;
-  } else {
-    // TODO: better handling of non-shopify channels
-    url = 'NONSENSE';
-  }
 
   request(url, function (error, response, body) {
     var variantsJSON;
