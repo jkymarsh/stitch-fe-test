@@ -4,10 +4,6 @@
 window.jkymarshStitchFETest.service('ProductsService', ['$http', function ($http) {
 
   return {
-    sayHello: function () {
-      console.log(Promise);
-      console.log('hello');
-    },
     getAllProducts: function() {
       return $http({
         method: 'GET',
