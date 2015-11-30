@@ -1,9 +1,17 @@
-<h3>My Products</h3>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Your Products</h3>
+  </div>
 
-<ul>
-  <li ng-repeat="p in productList.products">
-    <a ui-sref="product({productId: p.id})" class="d-b">
-      {{p}}
-    </a>
-  </li>
-</ul>
+  <div class="panel-body">
+    <div class="list-group">
+      <a ui-sref="product({productId: p.id})" class="list-group-item" ng-repeat="p in productList.products">
+        <span class="badge">{{p.num_variants}} variants</span>
+
+        <h4 class="list-group-item-heading">{{p.title}}</h4>
+
+        <p class="list-group-item-text">#{{p.id}}</p>
+      </a>
+    </div>
+  </div>
+</div>
