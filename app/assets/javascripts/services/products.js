@@ -17,18 +17,25 @@ window.jkymarshStitchFETest.service('ProductsService', ['$http', function ($http
     getAllVariants: function(productId) {
       return $http({
         method: 'GET',
-        url: '/api/v1/products/3923236550?channel=shopify&url=/admin/products/3923236550/variants.json'
+        url: '/api/v1/products/' + productId + '?channel=shopify&url=/admin/products/' + productId + '/variants.json'
       });
     },
-    updateVariant: function(variantId) {
+    updateVariant: function(variant) {
+      var variantId = variant.id;
+
       return $http({
         method: 'PUT',
-        url: '/api/v1/variants/11436115974?channel=shopify&url=/admin/variants/11436115974.json',
+        url: '/api/v1/variants/' + variantId + '?channel=shopify&url=/admin/variants/' + variantId + '.json',
         data: {
           "variant": {
-              "id": 11436115974,
-              "option2": "S"
-            }
+            title: variant.title,
+            sku: variant.sku,
+            inventory_quantity: variant.inventory_quantity,
+            option1: variant.option1,
+            option2: variant.option2,
+            option3: variant.option3,
+            price: variant.price
+          }
         }
       });
     }

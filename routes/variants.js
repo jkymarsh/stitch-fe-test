@@ -8,29 +8,22 @@ var PASSWD = 'e7f797fa4268868a7639383a2bad9493';
 var STORE_NAME = 'stitchlabs-jkymarsh';
 
 router.put('/:variant_id', function(req, res){
-
-  var requestData = req.body;
-
-  console.log(requestData);
-
   request({
-    url: 'https://' + API_KEY + ':' + PASSWD + '@' + STORE_NAME + '.myshopify.com' + req.query.url
-    , method: "PUT"
-    , json: true
-    , headers: {
+    url: 'https://' + API_KEY + ':' + PASSWD + '@' + STORE_NAME + '.myshopify.com' + req.query.url,
+    method: "PUT",
+    json: true,
+    headers: {
       "content-type": "application/json"
+    },
+    body: JSON.stringify(req.body)
+  }, function (error, response, body) {
+    if (!error && response.statusCode === 200 || response.statusCode === 201) {
+      res.status(200).send(body);
+    } else {
+      console.log(error);
+      //console.log(response);
+      res.status(500).send(body);
     }
-    , body: JSON.stringify(requestData)
-  }
-  , function (error, response, body) {
-
-      if (!error && response.statusCode === 200 || response.statusCode === 201) {
-        res.status(200).send(body);
-      } else {
-        console.log(error);
-        //console.log(response);
-        res.status(500).send(body);
-      }
   });
 });
 
