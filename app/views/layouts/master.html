@@ -1,7 +1,13 @@
-<div ng-include="'/views/header.html'" style="margin-bottom: 20px;"></div>
+<div ng-include="'/views/header.html'"></div>
 
-<div class="container cf">
-  <div ng-include="'/views/product-list.html'" ng-controller="ProductListCtrl as productList" class="fl-l w-1-4"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 col-md-3">
+      <div ng-include="'/views/product-list.html'" ng-controller="ProductListCtrl as productList"></div>
+    </div>
 
-  <div ui-view class="fl-l w-3-4"></div>
+    <div class="col-sm-8 col-md-9">
+      <div ui-view></div>
+    </div>
+  </div>
 </div>
