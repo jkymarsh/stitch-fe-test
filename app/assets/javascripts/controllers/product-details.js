@@ -1,15 +1,15 @@
 // https://docs.angularjs.org/guide/concepts#controller
-window.jkymarshStitchFETest.controller('ProductDetailsCtrl', ['$stateParams', 'ProductsService', function($stateParams, ProductsService) {
+window.jkymarshStitchFETest.controller('ProductDetailsCtrl', ['$stateParams', 'ProductsService', 'VariantsService', function($stateParams, ProductsService, VariantsService) {
   var productId = $stateParams.productId
   var that = this;
 
-  ProductsService.getAllVariants(productId).then(function(response) {
+  ProductsService.getAllProductVariants(productId).then(function(response) {
     console.log(response.data);
     that.variants = response.data;
   });
 
   this.updateVariant = function(variant) {
-    ProductsService.updateVariant(variant).then(function(response) {
+    VariantsService.updateVariant(variant).then(function(response) {
       console.log(response);
     });
   };
