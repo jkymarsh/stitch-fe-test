@@ -32,6 +32,7 @@ app.use('/vendor/assets/javascripts', express.static(path.join(__dirname, 'app',
 app.use('/assets', express.static(path.join(__dirname, 'app', 'assets', 'images')));
 app.use('/assets', express.static(path.join(__dirname, 'app', 'assets', 'javascripts')));
 app.use('/assets', express.static(path.join(__dirname, 'app', 'assets', 'stylesheets')));
+app.use('/fonts', express.static(path.join(__dirname, 'app', 'assets', 'stylesheets', 'fonts')));
 app.use('/views', express.static(path.join(__dirname, 'app', 'views')));
 
 app.use(express.static(path.join(__dirname, 'app')));
