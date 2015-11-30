@@ -10,6 +10,7 @@ var debug = require('debug')('stitchapp');
 var routes = require('./routes/index');
 var shopify = require('./routes/shopify');
 var products = require('./routes/products');
+var variants = require('./routes/variants');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use('/api/v1', apiV1Router);
 
 app.use('/', routes);
 apiV1Router.use('/products', products);
+apiV1Router.use('/variants', variants);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

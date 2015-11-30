@@ -19,6 +19,18 @@ window.jkymarshStitchFETest.service('ProductsService', ['$http', function ($http
         method: 'GET',
         url: '/api/v1/products/3923236550?channel=shopify&url=/admin/products/3923236550/variants.json'
       });
+    },
+    updateVariant: function(variantId) {
+      return $http({
+        method: 'PUT',
+        url: '/api/v1/variants/11436115974?channel=shopify&url=/admin/variants/11436115974.json',
+        data: {
+          "variant": {
+              "id": 11436115974,
+              "option2": "S"
+            }
+        }
+      });
     }
   }
 }]);

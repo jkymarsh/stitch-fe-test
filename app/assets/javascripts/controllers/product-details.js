@@ -19,6 +19,8 @@ window.jkymarshStitchFETest.controller('ProductDetailsCtrl', ['ProductsService',
 
   this.updateVariant = function(variantId) {
     console.log('update variant: ', variantId);
+
+    ProductsService.updateVariant();
   };
 
   this.total = function total(outCurr) {
